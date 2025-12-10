@@ -306,14 +306,16 @@ Switch>
 ----
 #### пункт g 
 подсоединяю кабель изернет
-![](3.png)
+
+![](2.png)
+
 в консоле обновляется состояние линии, 
 ```
 %LINK-5-CHANGED: Interface FastEthernet0/6, changed state to up
 
 %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/6, changed state to up
 ```
-ip компьютеру назначил
+ip хосту назначил в через графический конфигуратор
 ![](3.png)
 настраиваю интерфейс со стороны циски:
 ```
@@ -512,6 +514,9 @@ Vlan1 is up, line protocol is up
 ```
 ### Шаг 2
 Проверяю пинги, и вход в телнет.
-[](4.png)
-[](5.png)
-[](6.png)
+#### Со стороны коммутатора:
+![](4.png)
+#### Со стороны хоста:
+![](5.png)
+#### Подключение по телнет:
+![](6.png)
