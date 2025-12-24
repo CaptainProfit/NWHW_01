@@ -203,15 +203,24 @@ service dhcp
 copy ru st
 ```
 Проверяю чего получилось `show ip dhcp pool`:
+
 ![dhcp pool](02.png)
+
 Какие адреса выдал `show ip dhcp binding`:
+
 ![dhcp bind](03.png)
+
 Смотрю сообщения DHCP`show ip dhcp server statistics:
 терплю фиаско
+
 ![dhcp stat](04.png)
+
 Результат на PC-A `ipconfig /all`:
+
 ![ipconfig](05.png)
+
 Пингую роутер и коммутатор`ping 192.168.1.1` и `ping 192.168.1.71`:
+
 ![ping R1](06.png)
 
 ## Часть 3. Настройка и проверка DHCP-ретрансляции на R2
@@ -222,7 +231,7 @@ copy ru st
 ip helper-address 10.0.0.1
 ```
     1. Настройте команду **ip helper-address** на G0/0/1, указав IP-адрес G0/0/0 R1.
-        
+
 
 _Откройте окно конфигурации_
 
