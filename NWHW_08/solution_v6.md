@@ -145,6 +145,6 @@ Cisco IOS XE Software, Version 03.16.05.S - Extended Support Release
 
 Cisco IOS Software, ISR Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version Version 15.5 (3)S5, RELEASE SOFTWARE (fc2)
 ```
-В общем переброс DHCP не получается, как наверное и в v4 - я там просто продублировал на R2, нужна помощь.
+В общем переброс DHCP не получается, как наверное и в v4 - я там просто продублировал на R2
 
 Но так как я сразу настроил статическую маршрутизацию хосты пингуют друг друга, без проблем.

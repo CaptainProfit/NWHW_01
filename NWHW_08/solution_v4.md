@@ -197,7 +197,7 @@ ip dhcp pool lcontrol
 
 ip dhcp pool rclient
 	network 192.168.1.128 255.255.255.240
-	default-router 192.168.1.1
+	default-router 192.168.1.129
 	domain-name CCNA-lab.com
 	exit
 service dhcp
@@ -242,7 +242,7 @@ ip dhcp pool clone_rclient
 	domain-name CCNA-lab.com
 exit
 ```
-
+без clone_rclient ничего реализовать не получается, 
 В результате `R1# show ip dhcp binding`:
 
 ![](07.png)
@@ -266,3 +266,38 @@ ip route 192.168.1.0 255.255.255.192 10.0.0.1
 ![](10.png)
 
 ![](11.png)
+
+# Чтобы заработал dhcp-relay
+- пересчитал подсети, поправил роутинг
+- убрал лишние пулы в R1
+- убрал dhcp пул в R2
+- добавил пул с адресами правой подсети в R1
+- убрал исключение адресов 
+- для правой подсети дефолтный роутер сделал 192.168.1.129 - он виден в той сети.
+На R1:
+```
+no ip route 192.168.1.128 255.255.255.240 10.0.0.2
+ip route 192.168.1.128 255.255.255.248 10.0.0.2
+
+ip dhcp pool rclient
+	network 192.168.1.128 255.255.255.240
+	default-router 192.168.1.129
+	domain-name CCNA-lab.com
+	exit
+
+no ip dhcp excluded-address 192.168.1.130
+no ip dhcp excluded-address 192.168.1.131
+no ip dhcp excluded-address 192.168.1.132
+no ip dhcp excluded-address 192.168.1.133
+no ip dhcp excluded-address 192.168.1.134
+```
+На R2:
+```
+no ip route 192.168.1.0 255.255.255.192 10.0.0.1
+no ip route 192.168.1.0 255.255.255.240 10.0.0.1
+no ip dhcp pool rclient_clone
+```
+
+и получил желаемый артефакт-доказательства работы dhcp relay
+
+![](12.png)
