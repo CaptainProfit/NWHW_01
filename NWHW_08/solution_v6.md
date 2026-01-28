@@ -127,10 +127,13 @@ exit
 ```
 и подключаю его к интерфейсу.
 ```
-interface g0/0/0
+interface g0/0/1
 	ipv6 dhcp server R2-STATEFUL
 exit
 ```
+В итоге адреса хостам раздаются, а связность между хостами имеется
+
+![](_v6/07.png)
 
 - - -
 ## Часть 5. Настройка и проверка DHCPv6 Relay на R2
@@ -145,6 +148,4 @@ Cisco IOS XE Software, Version 03.16.05.S - Extended Support Release
 
 Cisco IOS Software, ISR Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version Version 15.5 (3)S5, RELEASE SOFTWARE (fc2)
 ```
-В общем переброс DHCP не получается, как наверное и в v4 - я там просто продублировал на R2
-
-Но так как я сразу настроил статическую маршрутизацию хосты пингуют друг друга, без проблем.
+Переброс DHCP не получается, настраиваю полноценный DHCPv6.

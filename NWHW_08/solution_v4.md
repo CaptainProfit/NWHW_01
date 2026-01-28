@@ -245,7 +245,7 @@ exit
 без clone_rclient ничего реализовать не получается, 
 В результате `R1# show ip dhcp binding`:
 
-![](07.png)
+![](_v4/07.png)
 
 на машине PC-B:
 
