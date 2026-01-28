@@ -21,7 +21,10 @@
 | R1     |              |                | [[configs/chapter1/R1]]     |
 
 Например для ноды BG-A:
-![configs/chapter1/BG-A](configs/chapter1/BG-A)[https://github.com/CaptainProfit/NWHW_01/edit/main/proj/configs/chapter1/BG-A)
+![configs/chapter1/BG-A](configs/chapter1/BG-A)
+[configs/chapter1/BG-A](configs/chapter1/BG-A)
+![configs/chapter1/BG-A](https://github.com/CaptainProfit/NWHW_01/edit/main/proj/configs/chapter1/BG-A)
+[configs/chapter1/BG-A](https://github.com/CaptainProfit/NWHW_01/edit/main/proj/configs/chapter1/BG-A)
 
 для ноды R-side:
 ![[configs/chapter1/R-side]]
