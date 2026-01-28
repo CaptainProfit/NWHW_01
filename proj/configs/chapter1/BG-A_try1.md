@@ -16,28 +16,24 @@ config term
 		login
 	exit
 
+	ip routing
+	ip route 11.20.201.0 255.255.255.0 gi 0/1
+	router ospf 1
+		router-id 12.22.72.1
+		default-information originate
+	exit
+
 	interface gi 0/0
 		ip address 12.22.72.1 255.0.0.0
-		no shut
 		ip ospf 1 area 1
+		no shut
 	exit
 
 	interface gi 0/1
-		ip address 10.12.32.1   255.255.255.248
+		ip address 10.12.32.1 255.255.255.248
+		ip ospf 1 area 1
 		no shut
-		ip ospf 1 area 0
 	exit
-
-	ip routing
-	router ospf 1
-		router-id 0.0.0.1
-		network 10.12.32.0   0.0.0.7 area 0
-		network 12.22.72.0 0.0.0.255 area 1
-		default-information originate
-	exit
-	ip route 11.20.201.0 255.255.255.0 gi 0/1
-	ip route 11.20.202.0 255.255.255.0 12.22.72.2
-	ip route 11.20.203.0 255.255.255.0 12.22.72.3
 exit
 
 clock set 11:18:00 jan 27 2026
