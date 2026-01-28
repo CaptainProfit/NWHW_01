@@ -1,4 +1,4 @@
-![[05_AS.png]]
+![](05_AS.png)
 
 **router 10**:
 ![[configs/chapter1/BG-A]]

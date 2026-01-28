@@ -1,4 +1,4 @@
-![[04_ospf.png]]
+![](04_ospf.png)
 
 ![[configs/chapter1/router4]]
 ![[configs/chapter1/router5]]
